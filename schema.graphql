@@ -1,0 +1,11 @@
+type ContractEventTransfer @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    lastOwner: String! @index
+    owner: String! @index
+    tokenId: BigInt! @index
+}
