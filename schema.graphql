@@ -9,3 +9,28 @@ type ContractEventTransfer @entity {
     owner: String! @index
     tokenId: BigInt! @index
 }
+
+type ERC1155EventTransfer @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    lastOwner: String! @index
+    owner: String! @index
+    tokenId: BigInt! @index
+    value: BigInt! @index
+}
+
+type ERC20EventTransfer @entity {
+    id: ID!
+    blockNumber: Int! @index
+    blockTimestamp: DateTime! @index
+    transactionHash: String! @index
+    contract: String! @index
+    eventName: String! @index
+    lastReceived: String! @index
+    owner: String! @index
+    value: BigInt! @index
+}

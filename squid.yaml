@@ -1,5 +1,5 @@
 manifestVersion: subsquid.io/v0.1
-name: erc721_tracker
+name: mantatrackern
 version: 1
 description: A squid indexer generated from an ABI template
 build: 
@@ -14,11 +14,3 @@ deploy:
     cmd:
       - npx
       - squid-graphql-server
-      - '--dumb-cache'
-      - in-memory
-      - '--dumb-cache-ttl'
-      - '1000'
-      - '--dumb-cache-size'
-      - '100'
-      - '--dumb-cache-max-age'
-      - '1000'

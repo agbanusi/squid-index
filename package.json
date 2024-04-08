@@ -2,11 +2,16 @@
   "name": "squid-evm-template",
   "private": true,
   "scripts": {
-    "build": "rm -rf lib/ && tsc"
+    "build": "rm -rf lib/ && tsc",
+    "setup": "docker build -t zeta-squid:2.5 .",
+    "process:prod": "sqd up",
+    "start:dev": "sqd serve",
+    "test": "sqd down && sqd migration:clean && sqd up && sqd migration:generate && sqd process",
+    "process": "sqd process"
   },
   "dependencies": {
     "@subsquid/archive-registry": "^3.0.0",
-    "@subsquid/evm-processor": "^1.5.1",
+    "@subsquid/evm-processor": "^1.16.0",
     "@subsquid/graphql-server": "^4.2.0",
     "@subsquid/typeorm-migration": "^1.2.0",
     "@subsquid/typeorm-store": "^1.2.0",

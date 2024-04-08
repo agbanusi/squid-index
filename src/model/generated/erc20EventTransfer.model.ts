@@ -2,8 +2,8 @@ import {Entity as Entity_, Column as Column_, PrimaryColumn as PrimaryColumn_, I
 import * as marshal from "./marshal"
 
 @Entity_()
-export class ContractEventTransfer {
-    constructor(props?: Partial<ContractEventTransfer>) {
+export class ERC20EventTransfer {
+    constructor(props?: Partial<ERC20EventTransfer>) {
         Object.assign(this, props)
     }
 
@@ -32,7 +32,7 @@ export class ContractEventTransfer {
 
     @Index_()
     @Column_("text", {nullable: false})
-    lastOwner!: string
+    lastReceived!: string
 
     @Index_()
     @Column_("text", {nullable: false})
@@ -40,5 +40,5 @@ export class ContractEventTransfer {
 
     @Index_()
     @Column_("numeric", {transformer: marshal.bigintTransformer, nullable: false})
-    tokenId!: bigint
+    value!: bigint
 }
